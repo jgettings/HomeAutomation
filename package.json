@@ -10,5 +10,8 @@
   "license": "BSD-2-Clause",
   "devDependencies": {
     "express": "~4.15.5"
+  },
+  "dependencies": {
+    "node-milight-promise": "^0.2.31"
   }
 }

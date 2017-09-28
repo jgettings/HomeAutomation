@@ -17,20 +17,23 @@ app.get('/', function(req, res) {
 	var red = 26;
 	var yellow = 52;
 	var totalBrightness = 100;
-	var totalTimeInMinutes = 45;
+	var totalTimeInMinutes = 60;
 	var pauseTime = (totalTimeInMinutes * 60 * 1000) / totalBrightness;
 
+  light.sendCommands(commands.rgbw.brightness(bedroom, 0));
+  //light.sendCommands(commands.rgbw.hue(bedroom, red));
   light.sendCommands(commands.rgbw.on(bedroom));
 
   var color = red;
   for (var brightness = 0; brightness <= totalBrightness; brightness++) {
-  		light.sendCommands(commands.rgbw.brightness(bedroom, brightness))
-  		light.sendCommands(commands.rgbw.hue(bedroom, color));
-  		light.pause(pauseTime);
+  		light.sendCommands(commands.rgbw.brightness(bedroom, brightness));
 
   		if (brightness % 3 == 0 && brightness < yellow) {
+  			light.sendCommands(commands.rgbw.hue(bedroom, color));
   			color++;
   		}
+
+  		light.pause(pauseTime);
   }
 
 	light.close();

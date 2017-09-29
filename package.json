@@ -4,11 +4,13 @@
   "description": "My stuff",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint --fix --ext js ./"
   },
   "author": "Jen Gettings",
   "license": "BSD-2-Clause",
   "devDependencies": {
+    "eslint": "^4.8.0",
     "express": "~4.15.5"
   },
   "dependencies": {

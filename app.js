@@ -5,7 +5,7 @@ var commands = require("node-milight-promise").commandsV6;
 var app = express();
 
 app.get("/", function(req, res) {
-	res.send("Welcome Home 2!");
+	res.send("Welcome Home! Test works!?");
 });
 
 // Sunrise

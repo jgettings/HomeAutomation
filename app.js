@@ -4,8 +4,12 @@ var commands = require("node-milight-promise").commandsV6;
 
 var app = express();
 
-// Sunrise
 app.get("/", function(req, res) {
+	res.send("Welcome Home!");
+});
+
+// Sunrise
+app.get("/sunrise", function(req, res) {
 	res.send("Starting sunrise...");
 
 	var light = new Milight({

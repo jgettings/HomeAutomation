@@ -5,7 +5,26 @@ var commands = require("node-milight-promise").commandsV6;
 var app = express();
 
 app.get("/", function(req, res) {
-	res.send("Welcome Home! Test works!?");
+	res.send("Welcome Home!");
+});
+
+app.get("/test", function(req, res) {
+	res.send("Running Test...");
+
+	var light = new Milight({
+		ip: "192.168.1.9",
+		type: "v6"
+	});
+
+	var zone = 1;
+
+	light.sendCommands(commands.rgbw.on(zone));
+	light.pause(100);
+	light.sendCommands(commands.rgbw.hue(zone, 40));
+	light.pause(100);
+	light.sendCommands(commands.rgbw.off(zone));
+
+	light.close();
 });
 
 // Sunrise
@@ -48,11 +67,12 @@ app.get("/sunrise", function(req, res) {
 app.listen(3000, function() {
 	console.log("Home Automation server has started on port 3000");
 
-	// var discoverBridges = require('node-milight-promise').discoverBridges;
+	// var discoverBridges = require("node-milight-promise").discoverBridges;
 	// discoverBridges({
-	//     type: 'all'
+	// 	type: "all"
 	// }).then(function (results) {
-	//     console.log(results);
+	// 	console.log("MiLight Bridges Discovered:");
+	// 	console.log(results);
 	// });
 });
 

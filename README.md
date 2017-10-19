@@ -1,9 +1,10 @@
 # HomeAutomation
-My home automation thingies
+My home automation thingies. I'm choosing to make my own "hub" type thing so that I can customize
+more than something off-the-shelf and so that it does not become obsolete.
 
-## Running locally
+## Starting the app
 
-```node app.js```
+```pm2 start app.js```
 
 ## Reloading on the server
 

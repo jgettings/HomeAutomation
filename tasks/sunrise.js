@@ -1,8 +1,7 @@
-var Milight = require('node-milight-promise').MilightController;
-var commands = require('node-milight-promise').commandsV6;
-var MyHouse = require('../my-house');
+import { MilightController as Milight, commandsV6 as commands } from 'node-milight-promise';
+import MyHouse from '../my-house';
 
-export const sunrise = function(zone) {
+export default function(zone) {
 	var light = new Milight({
 		ip: MyHouse.lights.bridgeIP,
 		type: 'v6'

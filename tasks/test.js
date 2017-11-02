@@ -1,20 +1,21 @@
-var Milight = require('node-milight-promise').MilightController;
-var commands = require('node-milight-promise').commandsV6;
-var MyHouse = require('../my-house');
+import { MilightController as Milight, commandsV6 as commands } from 'node-milight-promise';
+import MyHouse from '../my-house';
 
-export const test = function() {
+export default function() {
 	var light = new Milight({
 		ip: MyHouse.lights.bridgeIP,
 		type: 'v6'
 	});
 
-	var zone = 1;
+	var zone = MyHouse.lights.livingRoom;
 
-	light.sendCommands(commands.rgbw.on(zone));
-	light.pause(100);
-	light.sendCommands(commands.rgbw.hue(zone, 40));
-	light.pause(100);
 	light.sendCommands(commands.rgbw.off(zone));
+	light.pause(200);
+	light.sendCommands(
+		commands.rgbw.on(zone),
+		commands.rgbw.whiteMode(zone),
+		commands.rgbw.brightness(100)
+	);
 
 	light.close();
 };

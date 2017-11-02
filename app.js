@@ -1,7 +1,7 @@
-var express = require('express');
-var MyHouse = require('./my-house');
-var test = require('./tasks/test');
-var sunrise = require('./tasks/sunrise');
+import express from 'express';
+import MyHouse from './my-house';
+import test from './tasks/test';
+import sunrise from './tasks/sunrise';
 
 var app = express();
 

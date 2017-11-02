@@ -8,7 +8,7 @@ more than something off-the-shelf and so that it does not become obsolete.
 
 ## Starting the app
 
-```pm2 start app.js```
+```pm2 start app.js --interpreter ./node_modules/.bin/babel-node```
 
 ## Reloading on the server
 

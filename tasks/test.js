@@ -14,7 +14,7 @@ export default function() {
 	light.sendCommands(
 		commands.rgbw.on(zone),
 		commands.rgbw.whiteMode(zone),
-		commands.rgbw.brightness(100)
+		commands.rgbw.brightness(50)
 	);
 
 	light.close();

@@ -17,6 +17,4 @@ more than something off-the-shelf and so that it does not become obsolete.
 
 # Technical TODO List
 
-1. Fix jenkins auto-run
-2. Make it run when the server reboots
-3. Consolidate the build into one js file? 
+1. Make it run when the server reboots

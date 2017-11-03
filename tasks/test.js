@@ -17,11 +17,5 @@ export default function() {
 		commands.rgbw.brightness(100)
 	);
 
-
-	light.pause(200);
-	var yellow = 52;
-	light.sendCommands(commands.rgbw.hue(zone, yellow));
-
-
 	light.close();
 };

@@ -14,8 +14,14 @@ export default function() {
 	light.sendCommands(
 		commands.rgbw.on(zone),
 		commands.rgbw.whiteMode(zone),
-		commands.rgbw.brightness(50)
+		commands.rgbw.brightness(100)
 	);
+
+
+	light.pause(200);
+	var yellow = 52;
+	light.sendCommands(commands.rgbw.hue(zone, yellow));
+
 
 	light.close();
 };

@@ -4,9 +4,7 @@ import MyHouse from '../my-house';
 /**
  * Turns on the living room
  */
-const on = function(req, res) {
-	res.send('OK');
-
+const on = function() {
 	var lights = MyHouse.initLights();
 
 	lights.sendCommands(
@@ -20,9 +18,7 @@ const on = function(req, res) {
 /**
  * Turns off the living room
  */
-const off = function(req, res) {
-	res.send('OK');
-	
+const off = function() {
 	var lights = MyHouse.initLights();
 
 	lights.sendCommands(commands.rgbw.off(MyHouse.lights.livingRoom));

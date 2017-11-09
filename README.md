@@ -17,4 +17,5 @@ more than something off-the-shelf and so that it does not become obsolete.
 
 # Technical TODO List
 
+1. Swagger
 1. Make it run when the server reboots

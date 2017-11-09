@@ -20,7 +20,7 @@ more than something off-the-shelf and so that it does not become obsolete.
 | -------- | ----------------------------------------------------------------------------------------------------------------- | ------------------- |
 | /prewake | Sleep as android, 45 mins before smart wake: Tasker Intent com.urbandroid.sleep.alarmclock.AUTO_START_SLEEP_TRACK | Start sunrise light |
 | /wake    | Sleep as android, alarm dismissed: Tasker Intent com.urbandroid.sleep.alarmclock.ALARM_ALERT_DISMISS              | Turn on main lights |
-
+| /home    | Tasker Home Wifi Connected                                                                                        | Turn on main lights |
 
 # Technical TODO List
 

@@ -9,6 +9,7 @@ export default function(req, res) {
 	// TODO: only if it is still dark out
 	main.on();
 	
+	// What should I do with the bedroom lights?
 	// TODO: start tea?
 	// TODO: more fun things?
 };

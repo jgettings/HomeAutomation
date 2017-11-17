@@ -6,6 +6,7 @@ import prewake from './controllers/prewake';
 import wake from './controllers/wake';
 import home from './controllers/home';
 import bed from './controllers/bed';
+import timeForBed from './controllers/timeForBed';
 
 var app = express();
 
@@ -15,6 +16,7 @@ app.get('/sunrise', prewake);
 app.get('/wake', wake);
 app.get('/home', home);
 app.get('/bed', bed);
+app.get('/timeForBed', timeForBed);
 
 app.listen(3000, function() {
 	console.log('Home Automation server has started on port 3000');

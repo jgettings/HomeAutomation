@@ -1,4 +1,4 @@
-import main from '../tasks/main';
+import main from '../lights/main';
 
 /**
  * Triggered when cell phone alarm is dismissed via tasker

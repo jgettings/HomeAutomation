@@ -1,4 +1,4 @@
-import main from '../tasks/main';
+import main from '../lights/main';
 
 /**
  * Triggered when connecting to home WiFi

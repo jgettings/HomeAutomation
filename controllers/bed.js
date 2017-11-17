@@ -1,6 +1,5 @@
-import main from '../tasks/main';
-import { commandsV6 as commands } from 'node-milight-promise';
-import MyHouse from '../my-house';
+import main from '../lights/main';
+import bedroom from '../lights/bedroom';
 
 
 /**
@@ -9,10 +8,7 @@ import MyHouse from '../my-house';
 export default function(req, res) {
 	res.send('OK');
 
-	// Turn main house lights off
+	// Turn all of the lights off
 	main.off();
-
-	var lights = MyHouse.initLights();
-	lights.sendCommands(commands.rgbw.off(MyHouse.lights.bedroom));
-	lights.close();
+	bedroom.off();
 };

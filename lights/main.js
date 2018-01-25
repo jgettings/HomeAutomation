@@ -1,7 +1,7 @@
 import MyHouse from '../my-house';
 import lights from './';
 
-var zone = MyHouse.lights.livingRoom;
+var zone = MyHouse.lights.livingRoom.zone;
 
 /**
  * Turns on the living room

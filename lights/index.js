@@ -3,6 +3,8 @@
  */
 import { commandsV6 as commands } from 'node-milight-promise';
 import MyHouse from '../my-house';
+import values from 'object.values';
+
 
 const on = function(zone, brightness, color) {
 	var lights = MyHouse.initLights();
@@ -33,6 +35,20 @@ const off = function(zone) {
 	var lights = MyHouse.initLights();
 
 	lights.sendCommands(commands.rgbw.off(zone));
+
+	lights.close();
+};
+
+const dim = function(zone) {
+	var color = values(MyHouse.lights).find(z => z.zone == zone).dimColor;
+
+	var lights = MyHouse.initLights();
+
+	lights.sendCommands(
+		commands.rgbw.on(zone),
+		commands.rgbw.hue(zone, color),
+		commands.rgbw.brightness(zone, 70)
+	);
 
 	lights.close();
 };
@@ -69,5 +85,6 @@ export default {
 	on,
 	onWhite,
 	off,
+	dim,
 	sunrise
 };

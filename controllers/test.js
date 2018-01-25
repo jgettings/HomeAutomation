@@ -6,7 +6,7 @@ export default function(req, res) {
 
 	var lights = MyHouse.initLights();
 
-	var zone = MyHouse.lights.livingRoom;
+	var zone = MyHouse.lights.livingRoom.zone;
 
 	lights.sendCommands(commands.rgbw.off(zone));
 	lights.pause(200);

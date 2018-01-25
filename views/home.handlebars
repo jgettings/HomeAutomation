@@ -1,0 +1,101 @@
+<style type="text/css">
+.list-group .material-icons, .card-header .material-icons {
+	top: 5px;
+	position: relative;
+	margin-right: 6px;
+	line-height: 0;
+}
+</style>
+
+<script type="text/javascript">
+function api(path) {
+	$.get(path)
+		.done(function() {
+			$('#alert-container').show();
+			setTimeout(function(){ $('#alert-container').hide(1000); }, 1500);
+		})
+		.fail(function() {
+			$('#alert-error-container').show();
+			setTimeout(function(){ $('#alert-error-container').hide(1000); }, 1500);
+		});
+}
+
+$(document).ready(function() {
+	$('#alert-container').hide();
+	$('#alert-error-container').hide();
+});
+</script>
+
+<div id="alert-container" style="display: none">
+	<div class="alert alert-success fade show" role="alert">
+	  <strong>Yay!</strong> The thing happened!
+	</div>
+</div>
+
+<div id="alert-error-container" style="display: none">
+	<div class="alert alert-danger fade show" role="alert">
+	  <strong>Oh noes!</strong> Something went wrong :(
+	</div>
+</div>
+
+<div class="row">
+  <div class="col-md-4">
+	  <div class="card">
+		  <div class="card-header">
+		  	<i class="material-icons">lightbulb_outline</i>
+		    Lights
+		  </div>
+		  <ul class="list-group list-group-flush">
+			{{#each lights}}
+			  <li class="list-group-item">
+			  	<div class="row">
+				  	<div class="col-auto mr-auto">
+				  		<i class="material-icons">{{icon}}</i>
+				  		{{name}}
+				  	</div>
+				  	<div class="col-auto">
+				  		<div class="btn-group" role="group" aria-label="Light Controls">
+							  <button type="button" class="btn btn-primary" onClick="api('/light/{{zone}}/on')">
+							  	<i class="material-icons">brightness_high</i>
+							  </button>
+							  <button type="button" class="btn btn-primary" onClick="api('/light/{{zone}}/dim')">
+							  	<i class="material-icons">brightness_medium</i>
+							  </button>
+							  <button type="button" class="btn btn-primary" onClick="api('/light/{{zone}}/off')">
+							  	<i class="material-icons">brightness_low</i>
+							  </button>
+							</div>
+						</div>
+					</div>
+				</li>
+			{{/each}}
+			</ul>
+		</div>
+  </div>
+
+  <div class="col-md-4">
+	  <div class="card">
+		  <div class="card-header">
+		    Things
+		  </div>
+		  <div class="list-group list-group-flush">
+		  	{{#each things}}
+			  	<button type="button" class="list-group-item list-group-item-action" onClick="api('{{path}}')">
+			  		<i class="material-icons">{{icon}}</i>
+						{{name}}
+					</button>
+			  {{/each}}
+			</div>
+		</div>
+  </div>
+
+  <div class="col-md-4">
+		<div class="card">
+	    <img class="card-img-top" src="https://cdn.shopify.com/s/files/1/0032/7882/products/tacocat_art.png?v=1447870796" alt="Taco Cat">
+		  <div class="card-body">
+		    <h5 class="card-title">More Stuff</h5>
+		    <p class="card-text">More things can go here eventually.</p>
+		  </div>
+		</div>
+  </div>
+</div>

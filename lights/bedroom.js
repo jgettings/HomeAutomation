@@ -1,7 +1,7 @@
 import MyHouse from '../my-house';
 import lights from './';
 
-var zone = MyHouse.lights.bedroom;
+var zone = MyHouse.lights.bedroom.zone;
 
 /**
  * Turns the bedroom lights on at a dimness/color that is good for just before sleeps

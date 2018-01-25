@@ -25,7 +25,7 @@ export default {
 			zone: 4,
 			name: 'Kitchen',
 			icon: 'kitchen',
-			dimColor: 26
+			dimColor: 52
 		}
 	},
 	initLights: function() {

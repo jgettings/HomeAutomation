@@ -12,7 +12,23 @@ more than something off-the-shelf and so that it does not become obsolete.
 
 ## Reloading on the server
 
+To run the app directly, after using the commands above:
 ```pm2 reload all```
+
+With jenkins, I'm using this script to reload the app on commit
+
+```
+cd /var/lib/jenkins/workspace/HomeAutomation
+git pull origin master
+npm install
+pm2 kill
+export BUILD_ID=dontKillMePlease
+pm2 start app.js -x --interpreter ./node_modules/.bin/babel-node
+pm2 update
+exit
+```
+
+
 
 # Endpoints and Triggers
 
@@ -26,5 +42,4 @@ more than something off-the-shelf and so that it does not become obsolete.
 
 1. Something to test behavior
 1. Log requests
-1. Swagger
 1. Make it run when the server reboots
